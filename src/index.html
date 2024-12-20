@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    Sai Dashboard | SaiKiran EV Analytics
+    </title>
+  </head>
+
+  <body
+    x-data="{ page: 'ecommerce', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
+         darkMode = JSON.parse(localStorage.getItem('darkMode'));
+         $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}"
+  >
+    <!-- ===== Preloader Start ===== -->
+    <include src="./partials/preloader.html"></include>
+    <!-- ===== Preloader End ===== -->
+
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex h-screen overflow-hidden">
+      <!-- ===== Sidebar Start ===== -->
+      <include src="./partials/sidebar.html"></include>
+      <!-- ===== Sidebar End ===== -->
+
+      <!-- ===== Content Area Start ===== -->
+      <div
+        class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden"
+      >
+        <!-- ===== Header Start ===== -->
+        <include src="./partials/header.html" />
+        <!-- ===== Header End ===== -->
+
+        <!-- ===== Main Content Start ===== -->
+        <main>
+          <div class="mx-auto max-w-screen-2xl  p-4 md:p-6 2xl:p-10">
+           
+            <div class="flex flex-col items-center justify-center text-center mb-6 space-y-3 
+            bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+  <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white tracking-wide mb-4">
+    Data Analysis of Electric Vehicles
+  </h2>
+  <p class="text-lg font-medium text-gray-600 dark:text-gray-300">
+    Insights and Trends in the EV Industry
+  </p>
+</div>
+
+             <div class="flex flex-wrap justify-center gap-7">
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Total Electric Vehicles (BEV) & (PHEV)</h3>
+                    <p class="text-3xl pt-6 font-extrabold text-blue-500">50000</p>
+                  </div>
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Battery Electric Vehicles (BEV)</h3>
+                    <p class="text-3xl pt-6 font-extrabold text-blue-500">39,461</p>
+                  </div>
+
+                 
+            
+                 
+            
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Plug-in Hybrid Electric Vehicles (PHEV)</h3>
+                    <p class="text-3xl pt-6 font-extrabold text-blue-500">10,539</p>
+                  </div>
+                  
+            
+                  
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Top City By Number of EV</h3>
+                    <p class="text-3xl font-extrabold pt-2 text-blue-500">Seatle</p>
+                    <p class="text-3xl font-extrabold pt-2  text-blue-500">1663</p>
+                  </div>
+            
+                 
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Top Electric Range EV</h3>
+                    <p class="text-3xl pt-4 font-extrabold text-blue-500">337 miles</p>
+                    <p class="text-3xl pt-2 font-extrabold text-blue-500">Tesla</p>
+                  </div>
+                  <div class="dark:bg-graydark dark:text-white bg-white text-black shadow-md rounded-lg p-4 w-64">
+                    <h3 class="text-lg font-bold">Top Make of Battery Electric Vehicles (BEV)</h3>
+                    <p class="text-3xl font-extrabold pt-2 text-blue-500">Tesla</p>
+                  
+                  </div>
+
+            <div
+              class="mt-4 grid  gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5"
+            >
+              <!-- ====== Chart One Start -->
+              <include src="./partials/chart-01.html" />
+              <!-- ====== Chart One End -->
+
+              <!-- ====== Chart Two Start -->
+              <include src="./partials/chart-02.html" />
+              <!-- ====== Chart Two End -->
+
+              <!-- ====== Chart Three Start -->
+              <include src="./partials/chart-03.html" />
+              <!-- ====== Chart Three End -->
+
+              <!-- ====== Map One Start -->
+              <include src="./partials/map-01.html" />
+              <!-- ====== Map One End -->
+
+              <!-- ====== Table One Start -->
+              <div class="col-span-12 xl:col-span-8">
+                <include src="./partials/table-01.html" />
+              </div>
+              <!-- ====== Table One End -->
+
+              <!-- ====== Chat Card Start -->
+              <div
+                class="col-span-12 rounded-sm border border-stroke bg-white py-6 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4"
+              >
+                <h4
+                  class="mb-6 px-7.5 text-xl font-bold text-black dark:text-white"
+                >
+                  Chats
+                </h4>
+
+                <div>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-03.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium text-black dark:text-white">
+                          Devid Heilo
+                        </h5>
+                        <p>
+                          <span
+                            class="text-sm font-medium text-black dark:text-white"
+                            >Hello, how are you?</span
+                          >
+                          <span class="text-xs"> . 12 min</span>
+                        </p>
+                      </div>
+                      <div
+                        class="flex h-6 w-6 items-center justify-center rounded-full bg-primary"
+                      >
+                        <span class="text-sm font-medium text-white">3</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-04.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium">Henry Fisher</h5>
+                        <p>
+                          <span class="text-sm font-medium"
+                            >I am waiting for you</span
+                          >
+                          <span class="text-xs"> . 5:54 PM</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-05.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium">Wilium Smith</h5>
+                        <p>
+                          <span class="text-sm font-medium"
+                            >Where are you now?</span
+                          >
+                          <span class="text-xs"> . 10:12 PM</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-01.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-3"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium text-black dark:text-white">
+                          Henry Deco
+                        </h5>
+                        <p>
+                          <span
+                            class="text-sm font-medium text-black dark:text-white"
+                            >Thank you so much!</span
+                          >
+                          <span class="text-xs"> . Sun</span>
+                        </p>
+                      </div>
+                      <div
+                        class="flex h-6 w-6 items-center justify-center rounded-full bg-primary"
+                      >
+                        <span class="text-sm font-medium text-white">2</span>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-02.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-7"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium">Jubin Jack</h5>
+                        <p>
+                          <span class="text-sm font-medium"
+                            >I really love that!</span
+                          >
+                          <span class="text-xs"> . Oct 23</span>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a
+                    href="messages.html"
+                    class="flex items-center gap-5 px-7.5 py-3 hover:bg-gray-3 dark:hover:bg-meta-4"
+                  >
+                    <div class="relative h-14 w-14 rounded-full">
+                      <img src="./images/user/user-05.png" alt="User" />
+                      <span
+                        class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-meta-6"
+                      ></span>
+                    </div>
+
+                    <div class="flex flex-1 items-center justify-between">
+                      <div>
+                        <h5 class="font-medium">Wilium Smith</h5>
+                        <p>
+                          <span class="text-sm font-medium"
+                            >Where are you now?</span
+                          >
+                          <span class="text-xs"> . Sep 20</span>
+                        </p>
+                      </div>
+                      
+
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- ====== Chat Card End -->
+            </div>
+          </div>
+        </main>
+        <!-- ===== Main Content End ===== -->
+      </div>
+      <!-- ===== Content Area End ===== -->
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+  </body>
+</html>
