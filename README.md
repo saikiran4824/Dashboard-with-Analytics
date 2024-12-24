@@ -11,7 +11,6 @@ Key Features
 Technical Details
 - *Frontend*: Built with Tailwind CSS for a fast and responsive design.
 - *Data Visualization*: Powered by Apex Charts for interactive and dynamic charting
-[22/12, 9:22 pm] Meta AI: Here is the description in Markdown format:
 
 EV Analytics Dashboard
 
